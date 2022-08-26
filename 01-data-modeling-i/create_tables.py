@@ -1,7 +1,7 @@
 import psycopg2
 
 
-table_drop = "DROP TABLE IF EXISTS actor;DROP TABLE IF EXISTS org;DROP TABLE IF EXISTS repo;DROP TABLE IF EXISTS events"
+table_drop = "DROP TABLE IF EXISTS events;DROP TABLE IF EXISTS actor;DROP TABLE IF EXISTS org;DROP TABLE IF EXISTS repo"
 
 table_create = """
 CREATE TABLE IF NOT EXISTS actor (
