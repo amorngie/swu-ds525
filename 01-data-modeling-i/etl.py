@@ -59,15 +59,32 @@ def process(cur, conn, filepath):
                 insert_statement = f"""
                     INSERT INTO actor (
                         actor_id,
-                        login
-                    ) VALUES ({each["actor"]["id"]}, '{each["actor"]["login"]}','{each["actor"]["login"]}')
+                        login,
+                        display_login,
+                        gravatar_id,
+                        url,
+                        avatar_url
+                    ) VALUES ({each["actor"]["id"]}, '{each["actor"]["login"]}','{each["actor"]["display_login"]}','{each["actor"]["gravatar_id"]}','{each["actor"]["url"]}','{each["actor"]["avatar_url"]}')
 
                     ON CONFLICT (actor_id) DO NOTHING
                 """
                 # print(insert_statement)
                 cur.execute(insert_statement)
 
-                
+                # Insert data into tables here
+                insert_statement = f"""
+                    INSERT INTO org (
+                        org_id,
+                        login,
+                        gravatar_id,
+                        url,
+                        avatar_url
+                    ) VALUES ({each["org"]["id"]}, '{each["org"]["login"]}','{each["org"]["gravatar_id"]}','{each["org"]["url"]}','{each["org"]["avatar_url"]}')
+
+                    ON CONFLICT (org_id) DO NOTHING
+                """
+                # print(insert_statement)
+                cur.execute(insert_statement)
 
                 conn.commit()
 
