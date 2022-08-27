@@ -6,33 +6,33 @@ table_drop = "DROP TABLE IF EXISTS events;DROP TABLE IF EXISTS actor;DROP TABLE 
 table_create = """
 CREATE TABLE IF NOT EXISTS actor (
                 actor_id INTEGER PRIMARY KEY,
-                login VARCHAR(50) NOT NULL,
-                display_login VARCHAR(100) NOT NULL,
+                login VARCHAR(50) ,
+                display_login VARCHAR(100) ,
                 gravatar_id VARCHAR(100),
-                url VARCHAR(255) NOT NULL,
-                avatar_url VARCHAR(255) NOT NULL
+                url VARCHAR(255) ,
+                avatar_url VARCHAR(255) 
 );
 CREATE TABLE IF NOT EXISTS org (
                 org_id INTEGER PRIMARY KEY,
-                login VARCHAR(50) NOT NULL,
+                login VARCHAR(50) ,
                 gravatar_id VARCHAR(100),
-                url VARCHAR(255) NOT NULL,
-                avatar_url VARCHAR(255) NOT NULL
+                url VARCHAR(255) ,
+                avatar_url VARCHAR(255) 
 
 );
 CREATE TABLE IF NOT EXISTS repo (
                 repo_id INTEGER PRIMARY KEY,
-                name VARCHAR(100) NOT NULL,
-                url VARCHAR(255) NOT NULL
+                name VARCHAR(100) ,
+                url VARCHAR(255) 
 );
 CREATE TABLE IF NOT EXISTS events (
                 events_id INTEGER PRIMARY KEY,
-                actor_id INTEGER NOT NULL,
-                org_id INTEGER NOT NULL,
-                repo_id INTEGER NOT NULL,
-                type VARCHAR NOT NULL,
-                public VARCHAR NOT NULL,
-                created_at TIMESTAMP NOT NULL,
+                actor_id INTEGER ,
+                org_id INTEGER ,
+                repo_id INTEGER ,
+                type VARCHAR ,
+                public VARCHAR ,
+                created_at TIMESTAMP ,
                 CONSTRAINT fk_actor FOREIGN KEY(actor_id) REFERENCES actor(actor_id) ,
                 CONSTRAINT fk_org FOREIGN KEY(org_id) REFERENCES org(org_id) ,
                 CONSTRAINT fk_repo FOREIGN KEY(repo_id) REFERENCES repo(repo_id)
