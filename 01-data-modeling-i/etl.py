@@ -73,15 +73,13 @@ def process(cur, conn, filepath):
 
                 # Insert data into tables here
                 insert_statement = f"""
-                    INSERT INTO org (
-                        org_id,
-                        login,
-                        gravatar_id,
-                        url,
-                        avatar_url
-                    ) VALUES ({each["org"]["id"]}, '{each["org"]["login"]}','{each["org"]["gravatar_id"]}','{each["org"]["url"]}','{each["org"]["avatar_url"]}')
+                    INSERT INTO repo (
+                        repo_id,
+                        name,
+                        url
+                    ) VALUES ({each["repo"]["id"]}, '{each["repo"]["name"]}','{each["repo"]["url"]}')
 
-                    ON CONFLICT (org_id) DO NOTHING
+                    ON CONFLICT (repo_id) DO NOTHING
                 """
                 # print(insert_statement)
                 cur.execute(insert_statement)
