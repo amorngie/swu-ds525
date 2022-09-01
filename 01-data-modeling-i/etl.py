@@ -32,6 +32,8 @@ def process(cur, conn, filepath):
             data = json.loads(f.read())
             for each in data:
                 # Print some sample data
+
+                
                 
                 if each["type"] == "IssueCommentEvent":
                     print(
@@ -41,9 +43,10 @@ def process(cur, conn, filepath):
                         each["actor"]["login"],
                         each["repo"]["id"],
                         each["repo"]["name"],
-                        each["created_at"],
-                        each["payload"]["issue"]["url"],
+                        each["created_at"]
+
                     )
+
                 else:
                     print(
                         each["id"], 
@@ -52,9 +55,11 @@ def process(cur, conn, filepath):
                         each["actor"]["login"],
                         each["repo"]["id"],
                         each["repo"]["name"],
-                        each["created_at"],
+                        each["created_at"]
                     )
+                    
 
+                
                 # Insert data into tables here
                 insert_statement = f"""
                     INSERT INTO actor (
@@ -83,6 +88,43 @@ def process(cur, conn, filepath):
                 """
                 # print(insert_statement)
                 cur.execute(insert_statement)
+                
+                try:
+                    # Insert data into tables here
+                    insert_statement = f"""
+                        INSERT INTO org (
+                            org_id,
+                            login,
+                            gravatar_id,
+                            url,
+                            avatar_url
+                        ) VALUES ({each["org"]["id"]}, '{each["org"]["login"]}','{each["org"]["gravatar_id"]}','{each["org"]["url"]}','{each["org"]["avatar_url"]}')
+
+                        ON CONFLICT (org_id) DO NOTHING
+                    """
+                    # print(insert_statement)
+                    cur.execute(insert_statement)
+                except:
+                    pass
+
+
+                 # Insert data into tables here
+                    insert_statement = f"""
+                        INSERT INTO events (
+                            events_id,
+                            actor_id,
+                            org_id,
+                            repo_id,
+                            type,
+                            public,
+                            created_at
+                        ) VALUES ('{each["id"]}', '{each["actor"]["id"]}','{each["org"]["id"]}','{each["repo"]["id"]}','{each["type"]}','{each["public"]}','{each["created_at"]}'
+                        ON CONFLICT (events_id) DO NOTHING
+                        """
+                    # print(insert_statement)
+                    cur.execute(insert_statement)
+
+                    
 
                 conn.commit()
 
