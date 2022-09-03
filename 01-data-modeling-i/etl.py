@@ -107,24 +107,24 @@ def process(cur, conn, filepath):
                 except:
                     pass
 
-
-                 # Insert data into tables here
+                try:
+                    # Insert data into tables here
                     insert_statement = f"""
                         INSERT INTO events (
                             events_id,
-                            actor_id,
-                            org_id,
-                            repo_id,
                             type,
                             public,
-                            created_at
-                        ) VALUES ('{each["id"]}', '{each["actor"]["id"]}','{each["org"]["id"]}','{each["repo"]["id"]}','{each["type"]}','{each["public"]}','{each["created_at"]}'
+                            created_at,
+                            actor_id,
+                            org_id,
+                            repo_id
+                        ) VALUES ({each["id"]},'{each["type"]}','{each["public"]}','{each["created_at"]}', '{each["actor"]["id"]}','{each["org"]["id"]}','{each["repo"]["id"]}')
                         ON CONFLICT (events_id) DO NOTHING
                         """
                     # print(insert_statement)
                     cur.execute(insert_statement)
-
-                    
+                except:
+                    pass    
 
                 conn.commit()
 
