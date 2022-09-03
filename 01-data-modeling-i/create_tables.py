@@ -26,13 +26,13 @@ CREATE TABLE IF NOT EXISTS repo (
                 url VARCHAR(255) 
 );
 CREATE TABLE IF NOT EXISTS events (
-                events_id INTEGER PRIMARY KEY,
-                actor_id INTEGER ,
-                org_id INTEGER ,
-                repo_id INTEGER ,
+                events_id BIGINT PRIMARY KEY,
                 type VARCHAR ,
                 public VARCHAR ,
                 created_at TIMESTAMP ,
+                actor_id INTEGER ,
+                org_id INTEGER ,
+                repo_id INTEGER ,
                 CONSTRAINT fk_actor FOREIGN KEY(actor_id) REFERENCES actor(actor_id) ,
                 CONSTRAINT fk_org FOREIGN KEY(org_id) REFERENCES org(org_id) ,
                 CONSTRAINT fk_repo FOREIGN KEY(repo_id) REFERENCES repo(repo_id)
@@ -41,10 +41,10 @@ CREATE TABLE IF NOT EXISTS events (
 
 
 create_table_queries = [
-    table_create,
+    table_create
 ]
 drop_table_queries = [
-    table_drop,
+    table_drop
 ]
 
 
