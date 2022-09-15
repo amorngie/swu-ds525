@@ -13,10 +13,10 @@ table_create = """
     (
         id text,
         type text,
-        public boolean,
+        repo_id text,
         PRIMARY KEY (
-            id,
-            type
+            type,
+            repo_id
         )
     )
 """
@@ -70,16 +70,18 @@ def process(session, filepath):
             data = json.loads(f.read())
             for each in data:
                 # Print some sample data
-                print(each["id"], each["type"], each["actor"]["login"])
+                print(each["id"], each["type"], each["repo"]["id"])
 
                 # Insert data into tables here
-
-
-def insert_sample_data(session):
-    query = f"""
-    INSERT INTO events (id, type, public) VALUES ('23487929637', 'IssueCommentEvent', true)
-    """
-    session.execute(query)
+                insert_statement = f"""
+                    INSERT INTO events (
+                        id,
+                        type,
+                        repo_id
+                    ) VALUES ('{each["id"]}','{each["type"]}','{each["repo"]["id"]}')
+                """
+                # print(insert_statement)
+                session.execute(insert_statement)
 
 
 def main():
@@ -106,18 +108,18 @@ def main():
     drop_tables(session)
     create_tables(session)
 
-    # process(session, filepath="../data")
-    insert_sample_data(session)
+    process(session, filepath="../data")
+    #insert_statement(session)
 
     # Select data in Cassandra and print them to stdout
     query = """
-    SELECT * from events WHERE id = '23487929637' AND type = 'IssueCommentEvent'
+     SELECT type, count(repo_id) AS Total_Repo from events GROUP BY type ALLOW FILTERING
     """
     try:
         rows = session.execute(query)
     except Exception as e:
         print(e)
-
+   
     for row in rows:
         print(row)
 
