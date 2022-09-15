@@ -113,7 +113,7 @@ def main():
 
     # Select data in Cassandra and print them to stdout
     query = """
-     SELECT type, count(repo_id) AS Total_Repo from events GROUP BY type ALLOW FILTERING
+     SELECT type, count(repo_id) AS Total_Repo from events GROUP BY type  
     """
     try:
         rows = session.execute(query)
