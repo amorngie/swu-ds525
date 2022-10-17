@@ -1,9 +1,9 @@
 {
-    "jsonpaths": [
-      "$.id",
-      "$.type",
-      "$.actor.login",
-      "$.repo.name",
-      "$.created_at"
-    ]
-  }
+  "jsonpaths": [
+    "$.id",
+    "$.type",
+    "$.actor.login",
+    "$.public",
+    "$.created_at"
+  ]
+}
