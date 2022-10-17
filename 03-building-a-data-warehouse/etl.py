@@ -111,7 +111,7 @@ def main():
     load_tables(cur, conn)
     insert_tables(cur, conn)
 
-    query = "select * from staging_events"
+    query = "select * from events"
     cur.execute(query)
     records = cur.fetchall()
     for row in records:
