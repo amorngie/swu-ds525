@@ -2,7 +2,7 @@
 
 ## Upload file in S3
 ```sh
-Screenshot (310).png
+![](../../../Screenshot%20(310).png)
 ```
 ## Create Redshift cluster
 ```sh
