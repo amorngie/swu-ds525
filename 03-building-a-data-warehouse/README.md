@@ -1,9 +1,13 @@
 # Building a Data Warehouse
 
 ## Upload file in S3
-![](../../../Screenshot%20(310).png)
+```sh
+Screenshot (310).png
+```
 ## Create Redshift cluster
-![](../../../Screenshot%20(313).png)
+```sh
+Screenshot (313).png
+```
 ## Run command
 ```sh
 python -m venv ENV
@@ -15,5 +19,9 @@ pip install -r requirements.txt
 python etl.py
 ```
 ## Result
-![](../../../Screenshot%20(312).png)
-![](../../../Screenshot%20(314).png)
+```sh
+Screenshot (312).png
+```
+```sh
+Screenshot (314).png
+```
