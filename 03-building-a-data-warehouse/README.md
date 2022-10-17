@@ -2,7 +2,7 @@
 
 ## Upload file in S3
 ```sh
-![](../../../Screenshot%20(310).png)
+![](vscode-remote://amorngie-swuds525-howwuoilsq6.ws-us71.gitpod.io/workspace/swu-ds525/03-building-a-data-warehouse/Lab3%20IMG/Screenshot%20%28310%29.png)
 ```
 ## Create Redshift cluster
 ```sh
