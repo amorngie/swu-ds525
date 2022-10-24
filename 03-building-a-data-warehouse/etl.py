@@ -100,7 +100,7 @@ def main():
     host = "redshift-cluster-1.cgpttgasm2sh.us-east-1.redshift.amazonaws.com"
     dbname = "dev"
     user = "awsuser"
-    password = "GeeGiiEz12"
+    password = "AMk123456"
     port = "5439"
     conn_str = f"host={host} dbname={dbname} user={user} password={password} port={port}"
     conn = psycopg2.connect(conn_str)
