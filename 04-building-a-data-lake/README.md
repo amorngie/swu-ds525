@@ -6,7 +6,7 @@ docker-compose up
 ```
 ## Access notebook
 ```sh
-https://user-images.githubusercontent.com/111683692/200263059-ddf31904-13de-4e37-bd1e-d7be58192353.png
+![Picture1](https://user-images.githubusercontent.com/111683692/200263705-b61cf162-cb71-4cde-8010-bd9b16c39421.png)
 ```
 ## Shut down
 ```sh
