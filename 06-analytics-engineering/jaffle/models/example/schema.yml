@@ -19,3 +19,17 @@ models:
         tests:
           - unique
           - not_null
+          
+  - name: completed_orders
+    description: "Completed orders with first name and last name"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: "The primary key for this table"
+        tests:
+          - accepted_values:
+              values: ['completed']
