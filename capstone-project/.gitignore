@@ -1,0 +1,5 @@
+# Work
+output_csv/
+output_parquet/
+logs/
+ENV/

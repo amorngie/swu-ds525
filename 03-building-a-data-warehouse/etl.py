@@ -46,9 +46,11 @@ create_table_queries = [
 ]
 copy_table_queries = [
     """
-    COPY staging_events FROM 's3://amk-ds525/github_events_01.json'
-    CREDENTIALS 'aws_iam_role=arn:aws:iam::043167588229:role/LabRole'
-    JSON 's3://amk-ds525/events_json_path.json'
+    COPY staging_events FROM 's3://gg-capstone/github_events_01.json'
+    ACCESS_KEY_ID 'aws_access_key_id'
+    SECRET_ACCESS_KEY 'aws_secret_access_key'
+    SESSION_TOKEN 'aws_session_token'
+    JSON 's3://gg-capstone/events_json_path.json'
     REGION 'us-east-1'
     """,
 ]
