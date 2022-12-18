@@ -75,22 +75,27 @@ def _create_tables():
         conn.commit()
 
 
-copy_table_queries = [
-    """
+
+
+def _load_tables():
+    copy_table = """
     COPY hr_emp FROM 's3://gg-capstone/hr-employee-attrition.csv'
-    ACCESS_KEY_ID 'ASIAQUDH5D6C6YHJQI4S'
-    SECRET_ACCESS_KEY 'dHbip448+z76LkqpuRXNhRMQ67K2ZVYfLmfZ9wKy'
-    SESSION_TOKEN 'FwoGZXIvYXdzEB8aDH4dkLTZUfuqpMusuiLNAWCZsaq+vteoS3bBmYI5bB48LpOpbx/IZsCVdeN3qTcWVyAvjUDrociLOkfinlPAamIayJmDoDJ1SxWQozzhd2J1QzOkuYzMC5Tg0E6pwyGkCcBm8yTWpzMOc4Ftgy+k/r1votXenULa4j1KENDHUxk8MwMEYKnPGwZAi8xxcX3zTki9Dl76SEimIXnrA2a60NYRXyuaX7sFIaAn20irkHLd9+O+8Ej6od/2EypGRK2oEuUMTjOAfN4slSF0YmFTSK7oEo9qm6SJznZoegYoprD8nAYyLZhGMtfKo9lZQUTV5DDrmZalHb76d+8kxkCCZm22U3rT1gdKsmpvlxD17eMDIA=='
+    ACCESS_KEY_ID 'ASIAQUDH5D6CVMUIV33L'
+    SECRET_ACCESS_KEY 'q5Hwv+E9rxKg5qO6E4T/ZDf+RiIEXSsJeTcGE/s6'
+    SESSION_TOKEN 'FwoGZXIvYXdzECMaDJxSPhWHwOQTzSyQWyLNAbGxv4oqaMvb4dMplGmkq4TzNAE3Pl7o2bJiA3Rl1wOG1W0owg7KNUqzgEXNQXnZ1UYd00pFwU5tbWcEC9mU7YUWNr5GGYHOTNetp2WvZ9YsFabj7MxuQ+Rrx4oHLdcsQFA0VnRacwywf+VAJmGbImxnHeMyE0bEkoxut/Akr5urlsPMBAMfS3pwvdlEd6cmXtOQZQ5yShY8Tc+oXk5ajWGtmKQtLnHkFe0HiDo1FOkL/A7VLi10XMZERfw4hqYDGlLOmawzT/3MXj5YUQYo2qT9nAYyLUqw4ZHXUVsEXzYPA/YMEM7qJcO/I09HzxIzDLyI+8oDPnA+eORY9fwNWJlqFw=='
     CSV
     DELIMITER ',' 
     IGNOREHEADER 1 
     """
-]
+    
+    copy_table_queries = [
+        copy_table
+    ]
 
-def _load_tables(cur, conn):
-    for query in copy_table_queries:
-        cur.execute(query)
+    for cop in copy_table_queries:
+        cur.execute(cop)
         conn.commit()
+
 
 
 with DAG(
