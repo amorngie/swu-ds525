@@ -80,9 +80,9 @@ def _create_tables():
 def _load_tables():
     copy_table = """
     COPY hr_emp FROM 's3://gg-capstone/hr-employee-attrition.csv'
-    ACCESS_KEY_ID 'ASIAQUDH5D6CVMUIV33L'
-    SECRET_ACCESS_KEY 'q5Hwv+E9rxKg5qO6E4T/ZDf+RiIEXSsJeTcGE/s6'
-    SESSION_TOKEN 'FwoGZXIvYXdzECMaDJxSPhWHwOQTzSyQWyLNAbGxv4oqaMvb4dMplGmkq4TzNAE3Pl7o2bJiA3Rl1wOG1W0owg7KNUqzgEXNQXnZ1UYd00pFwU5tbWcEC9mU7YUWNr5GGYHOTNetp2WvZ9YsFabj7MxuQ+Rrx4oHLdcsQFA0VnRacwywf+VAJmGbImxnHeMyE0bEkoxut/Akr5urlsPMBAMfS3pwvdlEd6cmXtOQZQ5yShY8Tc+oXk5ajWGtmKQtLnHkFe0HiDo1FOkL/A7VLi10XMZERfw4hqYDGlLOmawzT/3MXj5YUQYo2qT9nAYyLUqw4ZHXUVsEXzYPA/YMEM7qJcO/I09HzxIzDLyI+8oDPnA+eORY9fwNWJlqFw=='
+    ACCESS_KEY_ID 'ASIAQUDH5D6C2EVF2LMB'
+    SECRET_ACCESS_KEY 'hxqkDdEY1zZrecL2ZN6pgN25qguLhfZELCbBD+bS'
+    SESSION_TOKEN 'FwoGZXIvYXdzEDoaDD+EQXWZu4Q9iEq+riLNAftqOMesNC+uiF8uR3XA5cEYQ1CtIGbbcxJ5xAId0rjwHL4FXo3FQWVuthg91PQ07m9M8Kym+GVICtNU1ZrXyOV5jzBsCXLrSY1GWRzSjH7KN8xbgfRT7UhrKd8CEry58cm/vhtfnluRqMgidxb5+3T3BUwUohkOr+ZfPVxPums10lIz1TAEdqJWjolSHu/Faymx418m0xCGcl8iR/lGulj1p3tyf5/DVkFfTx+Vm8++6ihuzpQ0e66CLBzBu8yKnahlrMb4CK/xZ5WiMAEo/6qCnQYyLXQFxlqckw4MWwUWOj6KuRKA57HPlabzMgeRDLvwBl/O9PB4D8ZVdVYC0Xj1rQ=='
     CSV
     DELIMITER ',' 
     IGNOREHEADER 1 
@@ -100,7 +100,7 @@ def _load_tables():
 
 with DAG(
     "etl",
-    start_date=timezone.datetime(2022, 12, 17),
+    start_date=timezone.datetime(2022, 12, 19),
     schedule="@daily",
     tags=["workshop"],
     catchup=False,
