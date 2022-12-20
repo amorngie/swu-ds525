@@ -13,14 +13,21 @@ python main.py
 ```
 ## Create table and load data from S3 to Redshift (Automating pipelines using Apache Airflow)
 Running Airflow
+
+```sh
+mkdir -p ./dags ./logs ./plugins
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+```
+
 ```sh
 docker-compose up
 ```
 Create connection to Redshift
+![Screenshot (332)](https://user-images.githubusercontent.com/111683692/208593165-87b578c9-fbb8-4e35-9be4-44ca09037c66.png)
 
-Refresh
+Trigger Dag
+![Screenshot (332)](https://user-images.githubusercontent.com/111683692/208593310-cd59a740-6e2d-41dc-b293-f6dbcd4d3a01.png)
 
-Check data in Redshift
 
 ## Use dbt for data modeling and data tranforming
 Create a dbt project
@@ -28,7 +35,6 @@ Create a dbt project
 ```sh
 dbt init
 ```
-
 
 Test dbt connection
 
@@ -38,6 +44,7 @@ dbt debug
 ```
 
 You should see "All checks passed!".
+![Screenshot (332)](https://user-images.githubusercontent.com/111683692/208593441-bcf6d9ab-8c0e-48ba-9372-9e544b0add9d.png)
 
 
 To create models
@@ -47,6 +54,7 @@ dbt run
 ```
 
 Check data on Redshift
+![Screenshot (350)](https://user-images.githubusercontent.com/111683692/208593524-b0f20509-af77-42bc-8d22-5a0aa2ecc672.png)
 
 
 To view docs (on Gitpod)
