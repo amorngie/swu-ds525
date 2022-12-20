@@ -44,7 +44,8 @@ dbt debug
 ```
 
 You should see "All checks passed!".
-![Screenshot (332)](https://user-images.githubusercontent.com/111683692/208593441-bcf6d9ab-8c0e-48ba-9372-9e544b0add9d.png)
+![Screenshot (345)](https://user-images.githubusercontent.com/111683692/208593700-713e8c1f-0b79-48b4-b62e-f0e19596973a.png)
+
 
 
 To create models
