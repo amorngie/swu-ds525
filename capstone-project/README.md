@@ -2,6 +2,7 @@
 
 ## Run command
 ```sh
+cd capstone-project
 python -m venv ENV
 source ENV/bin/activate
 pip install -r requirements.txt
@@ -11,9 +12,16 @@ pip install -r requirements.txt
 python main.py
 ```
 ## Create table and load data from S3 to Redshift (Automating pipelines using Apache Airflow)
+Running Airflow
 ```sh
-python main.py
+docker-compose up
 ```
+Create connection to Redshift
+
+Refresh
+
+Check data in Redshift
+
 ## Use dbt for data modeling and data tranforming
 Create a dbt project
 
