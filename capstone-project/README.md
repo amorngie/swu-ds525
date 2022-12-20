@@ -24,11 +24,13 @@ docker-compose up
 ```
 Create connection to Redshift
 
-![Picture7](https://user-images.githubusercontent.com/111683692/208723321-c6e5c5db-daad-4d0f-b734-16ef667acd5f.png)
+![Picture7](https://user-images.githubusercontent.com/111683692/208725189-551b3b8c-dcd4-4ca6-8498-9247c525cccd.png)
+
 
 
 Trigger Dag
-![Picture8](https://user-images.githubusercontent.com/111683692/208723341-0541cc33-2da9-4a20-9cc1-63ef9c2fd624.png)
+
+![Picture8](https://user-images.githubusercontent.com/111683692/208725208-51097aae-7473-470e-bd72-f65bc7f29d56.png)
 
 
 
@@ -49,7 +51,9 @@ dbt debug
 ```
 
 You should see "All checks passed!".
-![Picture9](https://user-images.githubusercontent.com/111683692/208723366-ae04a125-8080-4ccc-a567-2c10bd4d6dc5.png)
+
+![Picture9](https://user-images.githubusercontent.com/111683692/208725128-e31210be-21a1-4731-b311-7d2ee54e5bf1.png)
+
 
 
 
@@ -62,7 +66,9 @@ dbt run
 ```
 
 Check data on Redshift
-![Picture10](https://user-images.githubusercontent.com/111683692/208723408-7134f6d1-0383-4cf2-a451-9738ea3fe3a3.png)
+
+![Picture10](https://user-images.githubusercontent.com/111683692/208725250-766a9964-4347-4389-b7b1-6a23949bfa73.png)
+
 
 
 
@@ -74,7 +80,8 @@ To view docs (on Gitpod)
 dbt docs generate
 dbt docs serve --no-browser
 ```
-![Picture6](https://user-images.githubusercontent.com/111683692/208723443-d5b4a138-712f-422c-be67-ea85591f8796.png)
+
+![Picture6](https://user-images.githubusercontent.com/111683692/208725275-a5f82801-8fde-4ca0-bc28-cd251673ba05.png)
 
 
 
