@@ -23,10 +23,12 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 docker-compose up
 ```
 Create connection to Redshift
-![Screenshot (332)](https://user-images.githubusercontent.com/111683692/208593165-87b578c9-fbb8-4e35-9be4-44ca09037c66.png)
+
+![connectaf](https://user-images.githubusercontent.com/111683692/208722924-60cc152b-a6f2-437f-8f8b-7d451de03027.jpg)
 
 Trigger Dag
-![Screenshot (329)](https://user-images.githubusercontent.com/111683692/208593827-72c8fa0f-941d-401d-9d59-c69a7b0cb610.png)
+![trigger](https://user-images.githubusercontent.com/111683692/208722975-915afb14-ac1d-4c31-adbe-f022381184e9.jpg)
+
 
 
 
@@ -45,7 +47,8 @@ dbt debug
 ```
 
 You should see "All checks passed!".
-![Screenshot (345)](https://user-images.githubusercontent.com/111683692/208593700-713e8c1f-0b79-48b4-b62e-f0e19596973a.png)
+
+![dbtdebug](https://user-images.githubusercontent.com/111683692/208723008-94b58181-d21d-4734-b668-0a0499ae47f4.jpg)
 
 
 
@@ -56,7 +59,9 @@ dbt run
 ```
 
 Check data on Redshift
-![Screenshot (350)](https://user-images.githubusercontent.com/111683692/208593524-b0f20509-af77-42bc-8d22-5a0aa2ecc672.png)
+
+![redshift](https://user-images.githubusercontent.com/111683692/208723049-f9a3caf6-b37b-4234-83af-622d3f5c5a14.jpg)
+
 
 
 To view docs (on Gitpod)
@@ -65,3 +70,6 @@ To view docs (on Gitpod)
 dbt docs generate
 dbt docs serve --no-browser
 ```
+
+![dbtlineage](https://user-images.githubusercontent.com/111683692/208722295-bc273a3f-4c2f-4184-b19b-d1829746fc68.jpg)
+
