@@ -26,7 +26,8 @@ Create connection to Redshift
 ![Screenshot (332)](https://user-images.githubusercontent.com/111683692/208593165-87b578c9-fbb8-4e35-9be4-44ca09037c66.png)
 
 Trigger Dag
-![Screenshot (332)](https://user-images.githubusercontent.com/111683692/208593310-cd59a740-6e2d-41dc-b293-f6dbcd4d3a01.png)
+![Screenshot (329)](https://user-images.githubusercontent.com/111683692/208593827-72c8fa0f-941d-401d-9d59-c69a7b0cb610.png)
+
 
 
 ## Use dbt for data modeling and data tranforming
